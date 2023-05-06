@@ -157,6 +157,7 @@ public class LoginController {
 //             expiredSeconds = (int)(expiredSeconds / 1000);
             cookie.setMaxAge((int) expiredSeconds); // 设置cookie的生存时间(秒)，只能传int类型的，所以把long类型除1000转int
             response.addCookie(cookie); // 发送cookie
+
             return "redirect:/index"; // 用户登陆后，要重定向在发一个请求处理
         } else {
             model.addAttribute("usernameMsg", map.get("usernameMsg")); // 如果没值，反正显示为空
